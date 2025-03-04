@@ -1,0 +1,22 @@
+/* Main Styles */
+:root {
+    --primary-color: #002D55;
+    --secondary-color: #0069d9;
+    --accent-color: #69b3ff;
+    --light-accent: #eaf4ff;
+    --dark-text: #333;
+    --light-text: #555;
+    --white: #fff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #dee2e6;
+    --dark-gray: #495057;
+  }
+  
+  body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    color: var(--dark-text);
+    line-height: 1.6;
+  }
+  
+  /* Otros estilos de App.css que creamos anteriormente */
+  /* ... */
