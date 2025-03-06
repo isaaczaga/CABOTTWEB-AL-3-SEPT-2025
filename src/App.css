@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+/* Add these styles to your existing CSS file */
+
+/* Fix for invisible text on homepage */
+.hero-text h1,
+.hero-text p,
+.home-page-heading,
+.home-page-text {
+  color: #ffffff !important; /* White text */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7) !important; /* Text shadow for better contrast */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* If your text is on a light background, use this instead */
+.light-background-text {
+  color: #333333 !important; /* Dark text for light backgrounds */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* For very important text that must be visible */
+.emphasis-text {
+  color: #ffffff !important;
+  font-weight: bold !important;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8) !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+/* Estilos para el logo fijo de Cabott */
+.fixed-logo {
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para el logo de Cabott */
+.cabott-logo {
+  position: fixed !important;
+  top: 10px !important;
+  left: 10px !important;
+  z-index: 1000 !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  padding: 5px !important;
+  display: block !important;
+}
+
+/* Ajuste para el contenido principal cuando el aviso está visible */
+.main-content.with-notice {
+  padding-top: 60px;
+}
+
+/* Estilo para el aviso importante */
+.important-notice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2a4d8f;
   color: white;
+  padding: 12px 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.5s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes slideDown {
   from {
-    transform: rotate(0deg);
+    transform: translateY(-100%);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(0);
+  }
+}
+
+/* Ajustes para navbar con logo fijo */
+.navbar {
+  padding-left: 80px !important;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .cabott-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .navbar {
+    padding-left: 60px !important;
   }
 }

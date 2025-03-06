@@ -1,0 +1,190 @@
+/* Estilos principales para el sitio de Cabott Capital */
+:root {
+    --primary-color: #002D55;
+    --secondary-color: #0069d9;
+    --accent-color: #69b3ff;
+    --light-accent: #eaf4ff;
+    --dark-text: #333;
+    --light-text: #555;
+    --white: #fff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #dee2e6;
+    --dark-gray: #495057;
+  }
+  
+  body {
+    font-family: 'Open Sans', 'Segoe UI', sans-serif;
+    color: var(--dark-text);
+    line-height: 1.6;
+    padding-top: 56px;
+  }
+  
+  /* Navbar y encabezado */
+  .navbar-dark.bg-primary {
+    background-color: var(--primary-color) !important;
+  }
+  
+  .navbar-brand img {
+    max-height: 40px;
+  }
+  
+  /* Hero section y carrusel */
+  .hero-section {
+    margin-top: -56px;
+  }
+  
+  .carousel-item {
+    height: 80vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    height: 80vh;
+    width: 100%;
+    filter: brightness(0.7);
+  }
+  
+  .carousel-caption {
+    bottom: 25%;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .carousel-caption h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-caption p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Cards y secciones */
+  .card {
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header.bg-primary {
+    background-color: var(--primary-color) !important;
+  }
+  
+  /* Botones */
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+  
+  /* Tablas */
+  .table {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table th {
+    font-weight: 600;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--light-gray);
+  }
+  
+  /* Simulador financiero */
+  .border-primary {
+    border-color: var(--primary-color) !important;
+    border-width: 2px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--dark-gray);
+  }
+  
+  footer a {
+    color: var(--white);
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  
+  footer h5 {
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  
+  /* Media queries para responsividad */
+  @media (max-width: 992px) {
+    .carousel-caption h2 {
+      font-size: 2rem;
+    }
+    
+    .carousel-caption p {
+      font-size: 1rem;
+    }
+    
+    .carousel-item {
+      height: 60vh;
+    }
+    
+    .carousel-item img {
+      height: 60vh;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-caption {
+      bottom: 20%;
+    }
+    
+    .carousel-item {
+      height: 50vh;
+    }
+    
+    .carousel-item img {
+      height: 50vh;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-caption h2 {
+      font-size: 1.5rem;
+    }
+    
+    .carousel-caption {
+      bottom: 10%;
+    }
+  }

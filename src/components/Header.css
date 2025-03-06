@@ -1,0 +1,11 @@
+.navbar {
+    background-color: #dee2e6 !important;
+  }
+  
+  .navbar .nav-link {
+    color: #343a40 !important; /* Color más oscuro para el texto para mejor contraste */
+  }
+  
+  .navbar .nav-link:hover {
+    color: #212529 !important;
+  }
