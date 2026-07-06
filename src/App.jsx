@@ -8,7 +8,6 @@ import BuroLink from './components/BuroLink';
 import ChatbotButton from './components/ChatbotButton';
 import ProtectedRoute from './components/ProtectedRoute';
 
-
 // Importa las páginas
 import Home from './pages/Home';
 import Simulador from './pages/Simulador';
@@ -18,8 +17,6 @@ import Contacto from './pages/Contacto';
 import AdminChat from './pages/AdminChat';
 
 function App() {
-  console.log("App component rendered with larger logo and text fix");
-  
   // State para manejar el aviso importante
   const [showNotice, setShowNotice] = useState(true);
 
@@ -28,56 +25,8 @@ function App() {
     const timer = setTimeout(() => {
       setShowNotice(false);
     }, 10000);
-    
-    return () => clearTimeout(timer);
-  }, []);
 
-  // Fix para texto invisible en la página principal
-  useEffect(() => {
-    const fixInvisibleText = () => {
-      // Seleccionar elementos que pueden contener texto invisible
-      const elements = document.querySelectorAll('h1, h2, p, .hero-text, .banner-text');
-      
-      elements.forEach(element => {
-        // Verificar si el elemento contiene el texto problemático
-        if (element.textContent.includes('Soluciones financieras a la medida') || 
-            element.textContent.includes('Ofrecemos créditos empresariales') ||
-            element.textContent.includes('mejores tasas del mercado')) {
-          
-          // Aplicar estilos para hacerlo visible
-          element.style.color = '#ffffff'; // Color blanco
-          element.style.textShadow = '1px 1px 3px rgba(0,0,0,0.7)'; // Sombra para contraste
-          element.style.visibility = 'visible'; // Asegurar visibilidad
-          element.style.opacity = '1'; // Asegurar opacidad completa
-          
-          // Si el fondo es claro, usar texto oscuro
-          const parent = element.parentElement;
-          const background = window.getComputedStyle(parent).backgroundColor;
-          
-          if (background.includes('rgb(255, 255, 255)') || 
-              background.includes('rgba(255, 255, 255') ||
-              background.includes('rgb(240, 240, 240)') ||
-              background.includes('rgb(248, 249, 250)')) {
-            element.style.color = '#333333'; // Color oscuro para fondos claros
-            element.style.textShadow = 'none'; // Quitar sombra en fondos claros
-          }
-        }
-      });
-    };
-    
-    // Ejecutar fix después de que se cargue la página
-    fixInvisibleText();
-    
-    // Ejecutar otra vez después de un pequeño retraso para contenido dinámico
-    const timer = setTimeout(fixInvisibleText, 500);
-    
-    // Ejecutar una vez más después de que las imágenes se hayan cargado
-    window.addEventListener('load', fixInvisibleText);
-    
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('load', fixInvisibleText);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -96,10 +45,10 @@ function App() {
           transition: 'transform 0.3s ease'
         }}>
           <Link to="/">
-            <img 
-              src="/images/logo/project-cabottcapital-logo.png" 
-              alt="Cabott Capital Logo" 
-              width="80" 
+            <img
+              src="/images/logo/project-cabottcapital-logo.png"
+              alt="Cabott Capital Logo"
+              width="80"
               height="80"
               style={{ display: 'block' }}
             />
@@ -108,7 +57,7 @@ function App() {
 
         {/* Componente BuroLink - ya tiene su propia posición fixed */}
         <BuroLink />
-        
+
         {/* Componente ChatbotButton */}
         <ChatbotButton />
 
@@ -129,7 +78,7 @@ function App() {
             <Container>
               <div className="text-center">
                 <span style={{ fontWeight: 'bold' }}>AVISO IMPORTANTE:</span> Nuevas tasas especiales disponibles para créditos PyMEs. ¡Solicite ahora!
-                <button 
+                <button
                   onClick={() => setShowNotice(false)}
                   style={{
                     background: 'none',
@@ -169,6 +118,12 @@ function App() {
         {/* Ajustar el contenido principal para evitar que se solape con los avisos */}
         <div style={{ paddingTop: showNotice ? '60px' : '0' }}>
           {/* Banner con mensaje dinámico entre el menú y los botones */}
+          <style>{`
+            @keyframes fadeIn {
+              from { opacity: 0; transform: translateY(10px); }
+              to   { opacity: 1; transform: translateY(0); }
+            }
+          `}</style>
           <div style={{
             backgroundColor: '#2a4d8f',
             padding: '30px 0',
@@ -188,12 +143,6 @@ function App() {
               }}>
                 Soluciones financieras a la medida de su negocio, enfocados en dar el mejor servicio y atención a nuestros clientes.
               </h2>
-              <style jsx>{`
-                @keyframes fadeIn {
-                  from { opacity: 0; transform: translateY(10px); }
-                  to { opacity: 1; transform: translateY(0); }
-                }
-              `}</style>
             </Container>
           </div>
           <Routes>
